@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>CSWIM2018-Venue</title>
+<style type="text/css">
+*{
+    margin:0px;
+    padding:0px;
+}
+body, button, input, select, textarea {
+    font: 12px/16px Verdana, Helvetica, Arial, sans-serif;
+}
+#info {
+    margin-top: 10px;
+}
+#container{
+	min-width:400px;
+	min-height:400px;
+}
+</style>
+<script charset="utf-8" src="http://map.qq.com/api/js?v=2.exp"></script>
+<script>
+var init = function() {
+    var center = new qq.maps.LatLng(36.128840, 120.367925);
+    var map = new qq.maps.Map(document.getElementById('container'),{
+        center: center,
+        zoom: 10
+    });
+
+    var rail = new qq.maps.LatLng(36.063576, 120.312549);
+  	var airport = new qq.maps.LatLng(36.267440, 120.385917);
+    var huanghai = new qq.maps.LatLng(36.060921, 120.342937);
+  	var sifang = new qq.maps.LatLng(36.100917, 120.354957);
+    var shangrila = new qq.maps.LatLng(36.064899, 120.378648);
+    var westin = new qq.maps.LatLng(36.063722, 120.380174);
+
+
+    // var infoWin1 = new qq.maps.InfoWindow({
+    //     map: map
+    // });
+    // infoWin1.open();
+    // infoWin1.setContent('<div style="width:100px;padding-top:5px;">'+
+    //     'Qingdao Railway Station</div>');
+    // infoWin1.setPosition(rail);
+    //
+  	// var infoWin2 = new qq.maps.InfoWindow({
+    //     map: map
+    // });
+    // infoWin2.open();
+    // infoWin2.setContent('<div style="width:100px;padding-top:5px;">'+
+    //     'Qingdao Liuting International Airport</div>');
+    // infoWin2.setPosition(airport);
+    //
+  	// var infoWin3 = new qq.maps.InfoWindow({
+    //     map: map
+    // });
+    // infoWin3.open();
+    // infoWin3.setContent('<div style="width:100px;padding-top:5px;">'+
+    //     'Qingdao Huanghai Hotel</div>');
+    // infoWin3.setPosition(huanghai);
+    //
+  	// var infoWin4 = new qq.maps.InfoWindow({
+    //     map: map
+    // });
+    // infoWin4.open();
+    // infoWin4.setContent('<div style="width:100px;padding-top:5px;">'+
+    //     'Qingdao Sifang Bus Station</div>');
+    // infoWin4.setPosition(sifang);
+
+    var marker_airport = new qq.maps.Marker({
+        position: airport,
+        map: map,
+        title: 'Qingdao Liuting International Airport'
+    });
+    //添加到提示窗
+    var info = new qq.maps.InfoWindow({
+        map: map
+    });
+    //获取标记的点击事件
+    qq.maps.event.addListener(marker_airport, 'click', function() {
+        info.open();
+        info.setContent('<div style="text-align:center;white-space:nowrap;'+
+        'margin:10px;">Qingdao Liuting International Airport</div>');
+        info.setPosition(airport);
+    });
+
+    var marker_rail = new qq.maps.Marker({
+        position: rail,
+        map: map,
+        title: 'Qingdao Railway Station'
+    });
+    //添加到提示窗
+    var info = new qq.maps.InfoWindow({
+        map: map
+    });
+    //获取标记的点击事件
+    qq.maps.event.addListener(marker_rail, 'click', function() {
+        info.open();
+        info.setContent('<div style="text-align:center;white-space:nowrap;'+
+        'margin:10px;">Qingdao Railway Station</div>');
+        info.setPosition(rail);
+    });
+
+    var marker_sifang = new qq.maps.Marker({
+        position: sifang,
+        map: map,
+        title: 'Qingdao Sifang Bus Station'
+    });
+    //添加到提示窗
+    var info = new qq.maps.InfoWindow({
+        map: map
+    });
+    //获取标记的点击事件
+    qq.maps.event.addListener(marker_sifang, 'click', function() {
+        info.open();
+        info.setContent('<div style="text-align:center;white-space:nowrap;'+
+        'margin:10px;">Qingdao Sifang Bus Station</div>');
+        info.setPosition(sifang);
+    });
+
+    var marker_huanghai = new qq.maps.Marker({
+        position: huanghai,
+        map: map,
+        title: 'Qingdao Huanghai Hotel'
+    });
+    //添加到提示窗
+    var info = new qq.maps.InfoWindow({
+        map: map
+    });
+    //获取标记的点击事件
+    qq.maps.event.addListener(marker_huanghai, 'click', function() {
+        info.open();
+        info.setContent('<div style="text-align:center;white-space:nowrap;'+
+        'margin:10px;">Qingdao Huanghai Hotel</div>');
+        info.setPosition(huanghai);
+    });
+
+    var marker_shangrila = new qq.maps.Marker({
+        position: shangrila,
+        map: map,
+        title: 'Shangri-La Hotel Qingdao'
+    });
+    //添加到提示窗
+    var info = new qq.maps.InfoWindow({
+        map: map
+    });
+    //获取标记的点击事件
+    qq.maps.event.addListener(marker_shangrila, 'click', function() {
+        info.open();
+        info.setContent('<div style="text-align:center;white-space:nowrap;'+
+        'margin:10px;">Shangri-La Hotel Qingdao</div>');
+        info.setPosition(shangrila);
+    });
+
+    var marker_westin = new qq.maps.Marker({
+        position: westin,
+        map: map,
+        title: 'The Westin Qingdao'
+    });
+    //添加到提示窗
+    var info = new qq.maps.InfoWindow({
+        map: map
+    });
+    //获取标记的点击事件
+    qq.maps.event.addListener(marker_westin, 'click', function() {
+        info.open();
+        info.setContent('<div style="text-align:center;white-space:nowrap;'+
+        'margin:10px;">The Westin Qingdao</div>');
+        info.setPosition(westin);
+    });
+
+}
+</script>
+</head>
+<body onload="init()">
+    <div id="container"></div>
+    <div id="info">
+</div>
+</body>
+</html>
